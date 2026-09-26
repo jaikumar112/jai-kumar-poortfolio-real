@@ -19,7 +19,17 @@
         <ul class="navlist">
             <li><a href="index.html#home" style="--i:1;">Home</a></li>
             <li><a href="index.html#about" style="--i:2;">About</a></li>
-            <li><a href="index.html#services" style="--i:3;" class="active">Services</a></li>
+            <li class="has-dropdown">
+                <a href="index.html#services" style="--i:3;" class="active">Services</a>
+                <button class="dropdown-toggle" type="button" aria-label="Show services" aria-expanded="false"><i class='bx bx-chevron-down'></i></button>
+                <ul class="dropdown">
+                    <li><a href="shopify-store-development.html"><i class='bx bx-store-alt'></i>Shopify Store</a></li>
+                    <li><a href="liquid-theme-customization.html"><i class='bx bx-code-curly'></i>Liquid &amp; Themes</a></li>
+                    <li><a href="shopify-app-extensions.html"><i class='bx bx-extension'></i>App Extensions</a></li>
+                    <li><a href="speed-seo-optimization.html"><i class='bx bx-tachometer'></i>Speed &amp; SEO</a></li>
+                    <li><a href="wordpress-websites.html"><i class='bx bxl-wordpress'></i>WordPress Sites</a></li>
+                </ul>
+            </li>
             <li><a href="index.html#skills" style="--i:4;">Skills</a></li>
             <li><a href="index.html#portfolio" style="--i:5;">Portfolio</a></li>
             <li><a href="index.html#contact" style="--i:6;">Contact</a></li>
@@ -29,7 +39,7 @@
 
     <section class="svc-hero">
         <div class="svc-hero-content">
-            <a href="index.html#my-services" class="svc-back"><i class='bx bx-left-arrow-alt'></i> All Services</a>
+            <a href="index.html#services" class="svc-back"><i class='bx bx-left-arrow-alt'></i> All Services</a>
             <span class="svc-tag"><i class='bx bx-store-alt'></i> Shopify Expert</span>
             <h1>Shopify Store Development</h1>
             <p>A complete, conversion-focused Shopify store built from scratch or rebuilt the right way. From theme setup to payments and shipping, I handle every step so you can start selling faster.</p>
@@ -178,11 +188,11 @@
             <div class="footer-col">
                 <h4>Services</h4>
                 <ul>
-                    <li><a href="shopify-store-development.html" class="current">Shopify Store Development</a></li>
-                    <li><a href="liquid-theme-customization.html">Liquid &amp; Theme Customization</a></li>
-                    <li><a href="shopify-app-extensions.html">Shopify App Extensions</a></li>
-                    <li><a href="speed-seo-optimization.html">Speed &amp; SEO Optimization</a></li>
-                    <li><a href="wordpress-websites.html">WordPress Websites</a></li>
+                    <li><a href="shopify-store-development.html" class="current">Shopify Store</a></li>
+                    <li><a href="liquid-theme-customization.html">Liquid &amp; Themes</a></li>
+                    <li><a href="shopify-app-extensions.html">App Extensions</a></li>
+                    <li><a href="speed-seo-optimization.html">Speed &amp; SEO</a></li>
+                    <li><a href="wordpress-websites.html">WordPress Sites</a></li>
                 </ul>
             </div>
 
