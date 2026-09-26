@@ -245,7 +245,7 @@ function cleanUrl() {
 }
 
 // menu / footer ke #links: page scroll ho, URL mein #home wagera na aaye
-document.querySelectorAll('a[href^="#"]').forEach((link) => {
+document.querySelectorAll('a[href^="#"]:not([target="_blank"])').forEach((link) => {
     link.addEventListener("click", (e) => {
         const id = link.getAttribute("href");
         if (id.length < 2) return;
