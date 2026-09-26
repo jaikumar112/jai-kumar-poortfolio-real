@@ -103,9 +103,10 @@ span {
 #menu-icon {
     width: 44px;
     height: 44px;
-    font-size: 40px;
+    font-size: 1.9rem;
     z-index: 10001;
     cursor: pointer;
+    margin-left: 25px;
     border: none;
     background: var(--hover-color);
     border-radius: 6px;
@@ -237,7 +238,7 @@ section {
     font-weight: 600;
     transition: .6s;
     box-shadow: var(--non-box-shadow);
-    border-radius: 50px;
+    border-radius: 0px;
     position: relative;
     overflow: hidden;
     z-index: 1;
@@ -1303,7 +1304,7 @@ section {
     color: var(--bg-color);
     font-weight: 600;
     font-size: .92rem;
-    border-radius: 50px;
+    border-radius: 6px;
     box-shadow: var(--non-box-shadow);
     transition: .3s;
 }
@@ -1462,7 +1463,6 @@ section {
 .svc-btn {
     display: inline-flex;
     align-items: center;
-    border-radius: 50px;
     justify-content: center;
     padding: .9rem 1.8rem;
     background: var(--hover-color);
@@ -2089,5 +2089,63 @@ section {
     .navlist .dropdown a {
         padding: .55rem .6rem;
         font-size: .92rem;
+    }
+}
+
+/*---Scroll fade-in animation----------*/
+
+/* shuru mein chhupa, scroll par halka sa neeche se upar aa kar dikhta hai */
+.scroll-scale,
+.scroll-bottom,
+.scroll-top {
+    opacity: 0;
+    transform: translateY(40px);
+    transition:
+        opacity .9s cubic-bezier(.16, 1, .3, 1),
+        transform .9s cubic-bezier(.16, 1, .3, 1);
+    will-change: opacity, transform;
+}
+
+.show-items {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* cards ek ek karke fade in (My Services) */
+.stagger.scroll-bottom,
+.stagger.scroll-scale {
+    opacity: 1;
+    transform: none;
+}
+
+.stagger > *:nth-child(n) {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+        opacity .8s cubic-bezier(.16, 1, .3, 1),
+        transform .8s cubic-bezier(.16, 1, .3, 1),
+        box-shadow .35s;
+    transition-delay: calc(var(--d, 0) * 100ms);
+}
+
+.stagger.show-items > *:nth-child(n) {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.stagger.show-items > .svc-link-card:nth-child(n):hover {
+    transform: translateY(-6px);
+    transition-delay: 0s;
+}
+
+/* jo log kam animation chahte hain */
+@media (prefers-reduced-motion: reduce) {
+    .scroll-scale,
+    .scroll-bottom,
+    .scroll-top,
+    .stagger > *:nth-child(n) {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
     }
 }
