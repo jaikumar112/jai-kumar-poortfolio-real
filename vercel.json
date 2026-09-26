@@ -2,6 +2,59 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": null,
   "outputDirectory": ".",
-  "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/liquid-theme-customization.html",
+      "destination": "/liquid-theme-customization",
+      "permanent": true
+    },
+    {
+      "source": "/shopify-app-extensions.html",
+      "destination": "/shopify-app-extensions",
+      "permanent": true
+    },
+    {
+      "source": "/shopify-store-development.html",
+      "destination": "/shopify-store-development",
+      "permanent": true
+    },
+    {
+      "source": "/speed-seo-optimization.html",
+      "destination": "/speed-seo-optimization",
+      "permanent": true
+    },
+    {
+      "source": "/wordpress-websites.html",
+      "destination": "/wordpress-websites",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/liquid-theme-customization",
+      "destination": "/liquid-theme-customization.html"
+    },
+    {
+      "source": "/shopify-app-extensions",
+      "destination": "/shopify-app-extensions.html"
+    },
+    {
+      "source": "/shopify-store-development",
+      "destination": "/shopify-store-development.html"
+    },
+    {
+      "source": "/speed-seo-optimization",
+      "destination": "/speed-seo-optimization.html"
+    },
+    {
+      "source": "/wordpress-websites",
+      "destination": "/wordpress-websites.html"
+    }
+  ]
 }
