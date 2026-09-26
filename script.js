@@ -107,6 +107,11 @@ const contactForm = document.querySelector("#contact-form");
 const formStatus = document.querySelector("#form-status");
 const sendBtn = document.querySelector("#send-btn");
 
+// dropdown chunne par rang normal ho jaye
+contactForm.querySelectorAll("select").forEach((sel) => {
+    sel.addEventListener("change", () => sel.classList.add("chosen"));
+});
+
 function buildFormData() {
     const fd = new FormData(contactForm);
     fd.append("_subject", "New message from your portfolio website");
@@ -145,6 +150,7 @@ contactForm.addEventListener("submit", async (e) => {
         if (data.success === true || data.success === "true") {
             showStatus("Thank you! Your message has been sent.", "success");
             contactForm.reset();
+            contactForm.querySelectorAll("select").forEach((sel) => sel.classList.remove("chosen"));
         } else if (msg.includes("activat")) {
             // Pehli dafa: FormSubmit ne activation email bheji hai
             showStatus("Form activation pending: jairamofficail@gmail.com inbox (ya spam) mein FormSubmit ki email kholein aur 'Activate Form' dabayein.", "error");

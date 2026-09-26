@@ -358,10 +358,36 @@
             <a href="mailto:jairamofficail@gmail.com" class="main-text ">jairamofficail@gmail.com</a>
         </div>
         <form class="scroll-bottom" id="contact-form">
-            <input id="name" name="name" type="text" placeholder="Your Name" required>
-            <input id="email" name="email" type="email" placeholder="Your Email" required>
-            <input id="subject" name="address" type="text" placeholder="Your Address">
-            <textarea name="message" id="msg" cols="30" rows="10" placeholder="Your Message" required></textarea>
+            <div class="form-row">
+                <input id="name" name="name" type="text" placeholder="Your Name" required>
+                <input id="email" name="email" type="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-row">
+                <input id="whatsapp" name="whatsapp" type="tel" placeholder="WhatsApp Number" required>
+                <input id="subject" name="address" type="text" placeholder="Your Address / Country">
+            </div>
+            <div class="form-row">
+                <select id="service" name="service" required>
+                    <option value="" disabled selected>Select a Service</option>
+                    <option>Shopify Store Development</option>
+                    <option>Shopify Liquid &amp; Theme Customization</option>
+                    <option>Shopify App Extensions</option>
+                    <option>Shopify Theme Development</option>
+                    <option>Speed &amp; SEO Optimization</option>
+                    <option>WordPress Website</option>
+                    <option>HTML / CSS / JavaScript Website</option>
+                    <option>Other</option>
+                </select>
+                <select id="budget" name="budget">
+                    <option value="" disabled selected>Your Budget</option>
+                    <option>Under $100</option>
+                    <option>$100 - $300</option>
+                    <option>$300 - $500</option>
+                    <option>$500 - $1000</option>
+                    <option>$1000+</option>
+                </select>
+            </div>
+            <textarea name="message" id="msg" cols="30" rows="10" placeholder="Tell me about your project" required></textarea>
             <div class="btn-box formBtn">
                 <button type="submit" class="btn" id="send-btn">Send Message</button>
             </div>
