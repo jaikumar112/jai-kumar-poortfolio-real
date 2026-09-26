@@ -28,8 +28,14 @@
     <meta name="twitter:description" content="Hire Jai Kumar, a Shopify expert in Hyderabad, Pakistan with 7+ years in Liquid theme customization, Shopify app extensions and WordPress websites.">
     <meta name="twitter:image" content="https://jaikumar.vercel.app/home-img%20(1).png">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- icons: page ko rokte nahi (non-blocking) -->
+    <link rel="preload" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"></noscript>
     <link rel="icon" type="image/png" href="home-img (1).png">
     <link rel="apple-touch-icon" href="home-img (1).png">
 
@@ -157,8 +163,8 @@
 
 <body>
     <header>
-        <div href="#home" class="logo">
-            <img src="logo.png" alt="Jai Kumar – Shopify Expert &amp; Web Designer logo">
+        <div class="logo">
+            <img src="logo.webp" alt="Jai Kumar – Shopify Expert &amp; Web Designer logo" width="1200" height="314" fetchpriority="high">
         </div>
         <ul class="navlist">
             <li><a href="#home" style="--i:1;">Home</a></li>
@@ -181,25 +187,25 @@
         <button id="menu-icon" type="button" aria-label="Open menu" aria-expanded="false"><i class='bx bx-menu'></i></button>
     </header>
     <section id="home" class="home">
-        <div class="home-content scroll-scale">
+        <div class="home-content">
             <h1>Hi! I'm Jai Kumar</h1>
             <div class="change-text">
-                <h3>And I'm </h3>
-                <h3>
+                <h2>And I'm </h2>
+                <h2>
                     <span class="word">Professional&nbsp;Coder </span>
                     <span class="word">Shopify&nbsp;Expert</span>
                     <span class="word">WordPress&nbsp;Expert</span>
                     </span>
-                </h3>
+                </h2>
             </div>
             <p>I'm Jai Kumar, a Shopify expert and web developer from Hyderabad, Pakistan with 7+ years of experience. I build fast, high-converting Shopify stores, custom Liquid themes and Shopify app extensions, plus WordPress websites for businesses worldwide. Let's grow your online store together!</p>
             <div class="info-box">
                 <div class="email-info">
-                    <h5>Email :</h5>
+                    <h3>Email :</h3>
                     <span>jairamofficail@gmail.com</span>
                 </div>
                 <div class="behance-info">
-                    <h5>Contact No. :</h5>
+                    <h3>Contact No. :</h3>
                     <span>+923033355927</span>
                 </div>
             </div>
@@ -208,16 +214,16 @@
                 <a href="jk (2).pdf" class="btn" target="_blank" rel="noopener">Download CV</a>
             </div>
             <div class="social-icons">
-                <a href="https://www.facebook.com/jaikumar3355" target="_blank" rel="noopener"><i class='bx bxl-facebook'></i></a>
-                <a href="https://github.com/Jaikumar112/" target="_blank" rel="noopener"><i class='bx bxl-github'></i></a>
+                <a href="https://www.facebook.com/jaikumar3355" target="_blank" rel="noopener" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
+                <a href="https://github.com/Jaikumar112/" target="_blank" rel="noopener" aria-label="GitHub"><i class='bx bxl-github'></i></a>
                 <a href="https://www.behance.net/jairam14" target="_blank" rel="noopener" aria-label="Behance"><i class='bx bxl-behance'></i></a>
                 <a href="https://www.linkedin.com/in/jai-kumar112/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
-                <a href="https://www.youtube.com/@webpro110" target="_blank" rel="noopener"><i class='bx bxl-youtube'></i></a>
+                <a href="https://www.youtube.com/@webpro110" target="_blank" rel="noopener" aria-label="YouTube"><i class='bx bxl-youtube'></i></a>
             </div>
         </div>
-        <div class="home-image scroll-scale">
+        <div class="home-image">
             <div class="img-box">
-                <img src="home-img (1).png" alt="Jai Kumar, Shopify expert and web developer in Pakistan" width="580" height="580">
+                <img src="home-img.webp" alt="Jai Kumar, Shopify expert and web developer in Pakistan" width="580" height="580" fetchpriority="high">
             </div>
             <div class="liquid-shape">
                 <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
@@ -241,7 +247,7 @@
     </section>
     <section id="about" class="about">
         <div class="img-about scroll-scale">
-            <img src="avatar 1.png" alt="Jai Kumar working on a Shopify website" width="580" height="580" loading="lazy">
+            <img src="avatar.webp" alt="Jai Kumar working on a Shopify website" width="580" height="580" loading="lazy">
             <div class="info-about1">
                 <span>7+</span>
                 <p>Years of Experience</p>
@@ -549,15 +555,15 @@
         </div>
         <form class="" id="contact-form">
             <div class="form-row">
-                <input id="name" name="name" type="text" placeholder="Your Name" required>
-                <input id="email" name="email" type="email" placeholder="Your Email" required>
+                <input id="name" aria-label="Your name" name="name" type="text" placeholder="Your Name" required>
+                <input id="email" aria-label="Your email" name="email" type="email" placeholder="Your Email" required>
             </div>
             <div class="form-row">
-                <input id="whatsapp" name="whatsapp" type="tel" placeholder="WhatsApp Number" required>
-                <input id="subject" name="address" type="text" placeholder="Your Address / Country">
+                <input id="whatsapp" aria-label="WhatsApp number" name="whatsapp" type="tel" placeholder="WhatsApp Number" required>
+                <input id="subject" aria-label="Your address or country" name="address" type="text" placeholder="Your Address / Country">
             </div>
             <div class="form-row">
-                <select id="service" name="service" required>
+                <select id="service" aria-label="Select a service" name="service" required>
                     <option value="" disabled selected>Select a Service</option>
                     <option>Shopify Store Development</option>
                     <option>Shopify Liquid &amp; Theme Customization</option>
@@ -568,7 +574,7 @@
                     <option>HTML / CSS / JavaScript Website</option>
                     <option>Other</option>
                 </select>
-                <select id="budget" name="budget">
+                <select id="budget" aria-label="Your budget" name="budget">
                     <option value="" disabled selected>Your Budget</option>
                     <option>Under $100</option>
                     <option>$100 - $300</option>
@@ -577,7 +583,7 @@
                     <option>$1000+</option>
                 </select>
             </div>
-            <textarea name="message" id="msg" cols="30" rows="5" placeholder="Tell me about your project" required></textarea>
+            <textarea name="message" id="msg" aria-label="Tell me about your project" cols="30" rows="5" placeholder="Tell me about your project" required></textarea>
             <div class="btn-box formBtn">
                 <button type="submit" class="btn" id="send-btn">Send Message</button>
             </div>
@@ -587,7 +593,7 @@
     <footer class="site-footer">
         <div class="footer-top">
             <div class="footer-brand">
-                <a href="#home" class="footer-logo" target="_blank" rel="noopener"><img src="logo.png" alt="Jai Kumar - Web Designer"></a>
+                <a href="#home" class="footer-logo" target="_blank" rel="noopener"><img loading="lazy" src="logo.webp" alt="Jai Kumar - Web Designer" width="1200" height="314"></a>
                 <p>Shopify expert with 7+ years of experience in Liquid, custom themes and Shopify app extensions. I build fast stores that sell.</p>
                 <div class="footer-social">
                     <a href="https://www.facebook.com/jaikumar3355" target="_blank" rel="noopener" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
@@ -599,7 +605,7 @@
             </div>
 
             <div class="footer-col">
-                <h4>Quick Links</h4>
+                <h3>Quick Links</h3>
                 <ul>
                     <li><a href="#home" target="_blank" rel="noopener">Home</a></li>
                     <li><a href="#about" target="_blank" rel="noopener">About</a></li>
@@ -611,7 +617,7 @@
             </div>
 
             <div class="footer-col">
-                <h4>Services</h4>
+                <h3>Services</h3>
                 <ul>
                     <li><a href="shopify-store-development.html" target="_blank" rel="noopener">Shopify Store</a></li>
                     <li><a href="liquid-theme-customization.html" target="_blank" rel="noopener">Liquid &amp; Themes</a></li>
@@ -622,7 +628,7 @@
             </div>
 
             <div class="footer-col footer-contact">
-                <h4>Get In Touch</h4>
+                <h3>Get In Touch</h3>
                 <ul>
                     <li><i class='bx bx-map'></i><a href="https://www.google.com/maps/search/?api=1&query=Hyderabad%2C%20Sindh%2C%20Pakistan" target="_blank" rel="noopener">Hyderabad, Sindh, Pakistan</a></li>
                     <li><i class='bx bxl-whatsapp'></i><a href="https://wa.me/923033355927?text=Hi%20Jai%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener">+92 303 3355927</a></li>
@@ -642,10 +648,8 @@
        class="wa-float" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
         <span class="wa-float-icon"><svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><path fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round" d="M16 3.5C9.1 3.5 3.5 9 3.5 15.8c0 2.4.7 4.6 1.9 6.5L3.8 28.5l6.4-1.6c1.8 1 3.8 1.5 5.8 1.5 6.9 0 12.5-5.5 12.5-12.3S22.9 3.5 16 3.5z"/><path fill="#fff" d="M12.3 9.6c-.3-.6-.6-.6-.9-.6h-.8c-.3 0-.7.1-1 .5-.4.4-1.3 1.3-1.3 3.1s1.3 3.6 1.5 3.9c.2.2 2.6 4.1 6.4 5.6 3.2 1.2 3.8 1 4.5.9.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.2-.3-.3-.7-.5l-2.5-1.2c-.3-.1-.6-.2-.8.2-.2.4-.9 1.2-1.1 1.4-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3-1.8-1.1-1-1.8-2.2-2-2.6-.2-.4 0-.6.2-.8l.6-.7c.2-.2.3-.4.4-.7.1-.3.1-.5 0-.7l-1.2-2.8z"/></svg></span>
     </a>
-    <script src="mixitup.min.js"></script>
-    <script src="script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" charset="utf-8"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.6/jquery.easypiechart.min.js" charset="utf-8"></script>
+    <script src="mixitup.min.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 
 </html>
