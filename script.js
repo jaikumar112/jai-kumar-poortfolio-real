@@ -175,6 +175,7 @@ const menuIconI = menuIcon.querySelector("i");
 // menu open/close: icon hamburger <-> cross (X)
 function setMenu(open) {
     navlist.classList.toggle("open", open);
+    if (!open) document.querySelectorAll(".has-dropdown.open").forEach(li => li.classList.remove("open"));
     menuIcon.classList.toggle("active", open);
     menuIconI.classList.toggle("bx-menu", !open);
     menuIconI.classList.toggle("bx-x", open);
@@ -214,3 +215,22 @@ revealEls.forEach((el) => observer.observe(el));
 // footer year
 const yearEl = document.querySelector("#year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
+// Services dropdown (menu)
+document.querySelectorAll(".has-dropdown").forEach((item) => {
+    const toggle = item.querySelector(".dropdown-toggle");
+    toggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const open = item.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", open);
+    });
+});
+
+// bahar click karne par dropdown band
+document.addEventListener("click", (e) => {
+    document.querySelectorAll(".has-dropdown.open").forEach((item) => {
+        if (!item.contains(e.target)) {
+            item.classList.remove("open");
+            item.querySelector(".dropdown-toggle").setAttribute("aria-expanded", "false");
+        }
+    });
+});
