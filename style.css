@@ -238,7 +238,7 @@ section {
     font-weight: 600;
     transition: .6s;
     box-shadow: var(--non-box-shadow);
-    border-radius: 0px;
+    border-radius: 50px;
     position: relative;
     overflow: hidden;
     z-index: 1;
@@ -1304,7 +1304,7 @@ section {
     color: var(--bg-color);
     font-weight: 600;
     font-size: .92rem;
-    border-radius: 6px;
+    border-radius: 50px;
     box-shadow: var(--non-box-shadow);
     transition: .3s;
 }
