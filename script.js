@@ -74,7 +74,10 @@ circles.forEach(elem => {
 
 // mix it up portfolio//
 
-var mixer = mixitup('.portfolio-gallery');
+// "All Projects" mein sirf pehle 6 projects dikhte hain (naya project sab se upar add karein)
+var mixer = mixitup('.portfolio-gallery', {
+    load: { filter: '.mix:nth-of-type(-n+6)' }
+});
 // web menu //
 let menuli = document.querySelectorAll('header ul li a');
 let section = document.querySelectorAll('section');
