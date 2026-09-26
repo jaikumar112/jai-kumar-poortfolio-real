@@ -103,10 +103,9 @@ span {
 #menu-icon {
     width: 44px;
     height: 44px;
-    font-size: 1.9rem;
+    font-size: 40px;
     z-index: 10001;
     cursor: pointer;
-    margin-left: 25px;
     border: none;
     background: var(--hover-color);
     border-radius: 6px;
