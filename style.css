@@ -2149,3 +2149,46 @@ section {
         transition: none !important;
     }
 }
+
+/*---Saare buttons gol (pill shape)----------*/
+
+.btn-box .btn,
+.btn,
+.formBtn .btn,
+.footer-cta,
+.svc-btn,
+.svc-btn-outline {
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+/* hover wali fill bhi gol kinaron ke andar rahe */
+.btn::before {
+    border-radius: 50px;
+}
+
+/* text ek hi line mein rahe */
+.btn-box .btn {
+    white-space: nowrap;
+}
+
+.formBtn .btn {
+    width: auto;
+    padding: 0 2rem;
+}
+
+.footer-cta {
+    padding: .75rem 1.8rem;
+}
+
+/*---LinkedIn icon + 5 social icons ki jagah----------*/
+
+.social-icons {
+    width: auto;
+    gap: .8rem;
+    justify-content: flex-start;
+}
+
+.social-icons a .bxl-linkedin {
+    color: #0a66c2;
+}
