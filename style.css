@@ -1888,7 +1888,7 @@ section {
 /*---Contact form: 2 fields ek line mein----------*/
 
 .contact form {
-    max-width: 50rem;
+    max-width: 60rem;
 }
 
 .form-row {
@@ -1949,5 +1949,149 @@ section {
     .form-row {
         grid-template-columns: 1fr;
         gap: 0;
+    }
+}
+
+/*---Header menu: Services dropdown----------*/
+
+.has-dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.has-dropdown > a {
+    padding-right: 4px !important;
+}
+
+.dropdown-toggle {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 12px 0 0;
+    opacity: 0;
+    animation: slideAnimation 1s ease forwards;
+    animation-delay: .9s;
+}
+
+.dropdown-toggle i {
+    transition: transform .3s ease;
+}
+
+.has-dropdown:hover .dropdown-toggle,
+.has-dropdown.open .dropdown-toggle {
+    color: var(--hover-color);
+}
+
+.has-dropdown.open .dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 8px;
+    min-width: 215px;
+    padding: .5rem;
+    background: var(--bg-color);
+    border-top: 2px solid var(--hover-color);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .45), 0 0 .6rem rgba(18, 247, 255, .25);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity .3s ease, transform .3s ease, visibility .3s;
+    z-index: 1001;
+}
+
+.has-dropdown.open .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* desktop: hover karne par khul jaye */
+@media (min-width: 769px) {
+    .has-dropdown:hover .dropdown,
+    .has-dropdown:focus-within .dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    .has-dropdown:hover .dropdown-toggle i {
+        transform: rotate(180deg);
+    }
+}
+
+.navlist .dropdown a {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    padding: .6rem .8rem;
+    font-size: .92rem;
+    font-weight: 500;
+    white-space: nowrap;
+    border-radius: 6px;
+    opacity: 1;
+    animation: none;
+    transition: background .25s, color .25s, padding-left .25s;
+}
+
+.navlist .dropdown a i {
+    font-size: 1.15rem;
+    color: var(--hover-color);
+}
+
+.navlist .dropdown a:hover {
+    background: rgba(255, 188, 0, .1);
+    color: var(--hover-color);
+    text-shadow: none;
+    padding-left: 1.1rem;
+}
+
+.navlist .dropdown a::after {
+    display: none;
+}
+
+/* mobile: menu ke andar neeche khulta hai */
+@media (max-width: 768px) {
+    .has-dropdown {
+        flex-wrap: wrap;
+    }
+    .has-dropdown > a {
+        flex: 1;
+    }
+    .dropdown-toggle {
+        padding: 0 4px 1rem 12px;
+        font-size: 1.5rem;
+    }
+    .dropdown {
+        position: static;
+        flex-basis: 100%;
+        min-width: 0;
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 0 0 1rem;
+        background: transparent;
+        border-top: none;
+        border-left: 2px solid var(--hover-color);
+        border-radius: 0;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        transition: max-height .4s ease, margin .4s ease;
+    }
+    .has-dropdown.open .dropdown {
+        max-height: 320px;
+        margin-bottom: 1rem;
+    }
+    .navlist .dropdown a {
+        padding: .55rem .6rem;
+        font-size: .92rem;
     }
 }
