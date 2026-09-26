@@ -234,3 +234,33 @@ document.addEventListener("click", (e) => {
         }
     });
 });
+
+// ---- Clean URL: address bar mein sirf domain dikhe (index.html / #section nahi) ----
+function cleanUrl() {
+    if (location.protocol === "file:") return; // local file par kuch na karein
+    const cleanPath = location.pathname.replace(/index\.html$/, "");
+    if (location.hash || cleanPath !== location.pathname) {
+        history.replaceState(null, "", cleanPath + location.search);
+    }
+}
+
+// menu / footer ke #links: page scroll ho, URL mein #home wagera na aaye
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", (e) => {
+        const id = link.getAttribute("href");
+        if (id.length < 2) return;
+        const target = document.querySelector(id);
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth" });
+    });
+});
+
+// kisi service page se "index.html#services" par aaye to pehle us section tak jao, phir URL saaf
+window.addEventListener("load", () => {
+    if (location.hash) {
+        const target = document.querySelector(location.hash);
+        if (target) setTimeout(() => target.scrollIntoView(), 60);
+    }
+    cleanUrl();
+});
