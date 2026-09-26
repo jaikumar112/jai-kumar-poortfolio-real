@@ -1463,6 +1463,7 @@ section {
 .svc-btn {
     display: inline-flex;
     align-items: center;
+    border-radius: 50px;
     justify-content: center;
     padding: .9rem 1.8rem;
     background: var(--hover-color);
