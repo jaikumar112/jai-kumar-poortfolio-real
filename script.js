@@ -267,3 +267,60 @@ window.addEventListener("load", () => {
     }
     cleanUrl();
 });
+
+
+// ---- Client reviews slider ----
+(function () {
+    const track = document.querySelector("#review-track");
+    if (!track) return;
+    const cards = [...track.querySelectorAll(".review-card")];
+    const dotsBox = document.querySelector("#review-dots");
+    const prev = document.querySelector(".review-prev");
+    const next = document.querySelector(".review-next");
+
+    const perView = () => Math.max(1, Math.round(track.clientWidth / cards[0].getBoundingClientRect().width));
+    const pages = () => Math.max(1, cards.length - perView() + 1);
+    const step = () => cards[1] ? cards[1].offsetLeft - cards[0].offsetLeft : track.clientWidth;
+    const current = () => Math.round(track.scrollLeft / step());
+
+    function goTo(i) {
+        const n = pages();
+        if (i < 0) i = n - 1;
+        if (i >= n) i = 0;
+        track.scrollTo({ left: i * step(), behavior: "smooth" });
+    }
+
+    function buildDots() {
+        dotsBox.innerHTML = "";
+        for (let i = 0; i < pages(); i++) {
+            const d = document.createElement("button");
+            d.type = "button";
+            d.setAttribute("aria-label", "Go to review " + (i + 1));
+            d.addEventListener("click", () => { goTo(i); restart(); });
+            dotsBox.appendChild(d);
+        }
+        updateDots();
+    }
+
+    function updateDots() {
+        const c = current();
+        [...dotsBox.children].forEach((d, i) => d.classList.toggle("active", i === c));
+    }
+
+    prev.addEventListener("click", () => { goTo(current() - 1); restart(); });
+    next.addEventListener("click", () => { goTo(current() + 1); restart(); });
+    track.addEventListener("scroll", () => requestAnimationFrame(updateDots));
+    window.addEventListener("resize", buildDots);
+
+    // auto slide har 4 second, mouse upar ho to ruk jaye
+    let timer;
+    function start() { timer = setInterval(() => goTo(current() + 1), 4000); }
+    function restart() { clearInterval(timer); start(); }
+    track.addEventListener("mouseenter", () => clearInterval(timer));
+    track.addEventListener("mouseleave", start);
+    track.addEventListener("touchstart", () => clearInterval(timer), { passive: true });
+    track.addEventListener("touchend", start, { passive: true });
+
+    buildDots();
+    start();
+})();

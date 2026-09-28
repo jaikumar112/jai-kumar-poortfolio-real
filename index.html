@@ -661,8 +661,10 @@
             <span>What my clients say</span>
             <h2>Client Reviews</h2>
         </div>
-        <div class="review-grid scroll-bottom stagger">
-            <article class="review-card">
+        <div class="review-slider scroll-bottom">
+            <button class="review-nav review-prev" type="button" aria-label="Previous review"><i class='bx bx-chevron-left'></i></button>
+            <div class="review-track" id="review-track">
+                <article class="review-card">
                 <div class="review-top">
                     <div class="review-stars" aria-label="5 out of 5 stars"><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i></div>
                     <i class='bx bxs-quote-alt-right review-quote'></i>
@@ -676,8 +678,8 @@
                         <p>Store Owner · USA</p>
                     </div>
                 </div>
-            </article>
-            <article class="review-card">
+                </article>
+                <article class="review-card">
                 <div class="review-top">
                     <div class="review-stars" aria-label="5 out of 5 stars"><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i></div>
                     <i class='bx bxs-quote-alt-right review-quote'></i>
@@ -691,8 +693,8 @@
                         <p>Store Owner · UK</p>
                     </div>
                 </div>
-            </article>
-            <article class="review-card">
+                </article>
+                <article class="review-card">
                 <div class="review-top">
                     <div class="review-stars" aria-label="5 out of 5 stars"><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i></div>
                     <i class='bx bxs-quote-alt-right review-quote'></i>
@@ -706,8 +708,8 @@
                         <p>Store Owner · Canada</p>
                     </div>
                 </div>
-            </article>
-            <article class="review-card">
+                </article>
+                <article class="review-card">
                 <div class="review-top">
                     <div class="review-stars" aria-label="5 out of 5 stars"><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i></div>
                     <i class='bx bxs-quote-alt-right review-quote'></i>
@@ -721,8 +723,8 @@
                         <p>Store Owner · UAE</p>
                     </div>
                 </div>
-            </article>
-            <article class="review-card">
+                </article>
+                <article class="review-card">
                 <div class="review-top">
                     <div class="review-stars" aria-label="5 out of 5 stars"><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i></div>
                     <i class='bx bxs-quote-alt-right review-quote'></i>
@@ -736,8 +738,8 @@
                         <p>Store Owner · Italy</p>
                     </div>
                 </div>
-            </article>
-            <article class="review-card">
+                </article>
+                <article class="review-card">
                 <div class="review-top">
                     <div class="review-stars" aria-label="5 out of 5 stars"><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i></div>
                     <i class='bx bxs-quote-alt-right review-quote'></i>
@@ -751,8 +753,11 @@
                         <p>Store Owner · Australia</p>
                     </div>
                 </div>
-            </article>
+                </article>
+            </div>
+            <button class="review-nav review-next" type="button" aria-label="Next review"><i class='bx bx-chevron-right'></i></button>
         </div>
+        <div class="review-dots" id="review-dots" aria-label="Review slides"></div>
         <div class="review-cta scroll-scale">
             <p>Worked with me? I'd love to hear your feedback.</p>
             <a href="https://wa.me/923033355927?text=Hi%20Jai%2C%20I%20would%20like%20to%20leave%20a%20review%20for%20your%20work." target="_blank" rel="noopener" class="port-more-btn"><i class='bx bxs-star'></i> Leave a Review</a>

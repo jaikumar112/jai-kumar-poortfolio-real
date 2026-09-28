@@ -2627,3 +2627,114 @@ section {
         grid-template-columns: 1fr;
     }
 }
+
+/*---Reviews slider----------*/
+
+.review-slider {
+    position: relative;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.review-track {
+    display: flex;
+    gap: 1.6rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: .8rem .2rem 1.4rem;
+    scrollbar-width: none;
+}
+
+.review-track::-webkit-scrollbar {
+    display: none;
+}
+
+/* desktop 3, tablet 2, mobile 1 card */
+.review-track .review-card {
+    flex: 0 0 calc((100% - 3.2rem) / 3);
+    scroll-snap-align: start;
+}
+
+@media (max-width: 1000px) {
+    .review-track .review-card {
+        flex-basis: calc((100% - 1.6rem) / 2);
+    }
+}
+
+@media (max-width: 650px) {
+    .review-track .review-card {
+        flex-basis: 100%;
+    }
+}
+
+.review-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 2px solid var(--hover-color);
+    background: var(--bg-color);
+    color: var(--hover-color);
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .4);
+    transition: .3s;
+}
+
+.review-nav:hover {
+    background: var(--hover-color);
+    color: var(--bg-color);
+    box-shadow: var(--non-box-shadow);
+}
+
+.review-prev {
+    left: -23px;
+}
+
+.review-next {
+    right: -23px;
+}
+
+@media (max-width: 650px) {
+    .review-prev {
+        left: -10px;
+    }
+    .review-next {
+        right: -10px;
+    }
+    .review-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+}
+
+.review-dots {
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+    margin-top: .4rem;
+}
+
+.review-dots button {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: none;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, .25);
+    cursor: pointer;
+    transition: width .35s, background .35s;
+}
+
+.review-dots button.active {
+    width: 28px;
+    background: var(--hover-color);
+}
